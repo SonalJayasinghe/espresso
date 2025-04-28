@@ -3,7 +3,7 @@ import connectMongo from "@/lib/mongoose";
 import WorkLog from "@/models/WorkLog";
 
 export async function POST(req: Request){
-    const {userId, date, startTime} = await req.json();
+    const {userId, startTime} = await req.json();
 
     if(!userId || !startTime){
         return NextResponse.json({message: "Please provide all required fields."}, {status: 400});
